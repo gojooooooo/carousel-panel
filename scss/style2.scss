@@ -160,4 +160,28 @@ img{
                 left: -100%;
             }
         }
-        
+        label{
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 5%;
+            top: 15%;
+        }
+        .right:before{
+            content: "●"
+        }
+        input:checked ~ .next > label{
+            opacity: 0;
+            z-index: 1;
+        }
+        input{
+            &:nth-child(1):checked ~ .next > label:nth-child(2){
+                opacity: 1;
+                z-index: 2;
+            }
+            &:nth-child(2):checked ~ .next > label:nth-child(3){
+                opacity: 1;
+                z-index: 2;
+            }
+
+        }
