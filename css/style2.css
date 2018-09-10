@@ -1,11 +1,15 @@
 @charset "UTF-8";
-html, body, main {
-  height: 100%; }
+html, body {
+  height: 100%;
+  font-family: 'Noto Sans Japanese', 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; }
+
+main {
+  height: 80%; }
 
 .slider__nav {
   width: 13px;
   height: 13px;
-  margin: 2rem 16px;
+  margin: 5vw;
   border-radius: 50%;
   z-index: 10;
   outline: 9px solid #ccc;
@@ -18,7 +22,7 @@ html, body, main {
   backface-visibility: hidden; }
 
 .slider {
-  height: 80%;
+  height: 100%;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -86,8 +90,6 @@ img {
   justify-content: center; }
 
 .slider__inner {
-  animation: auto 3s ease-in 3s;
-  animation-fill-mode: forwards;
   position: absolute;
   top: 0;
   left: 0;
@@ -139,24 +141,140 @@ img {
   100% {
     left: -100%; } }
 
-label {
-  width: 10px;
-  height: 10px;
+.next {
   position: absolute;
-  right: 5%;
-  top: 15%; }
+  right: 6vw;
+  top: 29%; }
 
-.right:before {
-  content: "●"; }
+.pre {
+  position: absolute;
+  width: 5vw;
+  height: 5vh;
+  left: 10px;
+  top: 29%; }
+
+.right {
+  position: absolute;
+  border: 1px solid black;
+  width: 5vw;
+  height: 17vh;
+  display: block; }
+
+.right:hover, .left:hover {
+  background: rgba(82, 54, 54, 0.459); }
+
+.left {
+  border: 1px solid black;
+  width: 5vw;
+  height: 17vh;
+  position: absolute; }
 
 input:checked ~ .next > label {
   opacity: 0;
   z-index: 1; }
 
+input:checked ~ .pre > label {
+  opacity: 0;
+  z-index: 1; }
+
+input ~ .next > label {
+  opacity: 0;
+  z-index: 1; }
+  input ~ .next > label:nth-child(2) {
+    opacity: 1;
+    z-index: 2; }
+
+input ~ .pre > label {
+  opacity: 0;
+  z-index: 1; }
+  input ~ .pre > label:nth-child(5) {
+    opacity: 1;
+    z-index: 2; }
+
 input:nth-child(1):checked ~ .next > label:nth-child(2) {
   opacity: 1;
   z-index: 2; }
 
+input:nth-child(1):checked ~ .pre > label:nth-child(5) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(2):checked ~ .pre > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(2):checked ~ .next > label {
+  opacity: 0;
+  z-index: 1; }
+
 input:nth-child(2):checked ~ .next > label:nth-child(3) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(2):checked ~ .pre > label:nth-child(1) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(3):checked ~ .pre > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(3):checked ~ .next > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(3):checked ~ .next > label:nth-child(4) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(3):checked ~ .pre > label:nth-child(2) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(3):checked ~ .pre > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(3):checked ~ .next > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(3):checked ~ .next > label:nth-child(4) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(3):checked ~ .pre > label:nth-child(2) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(4):checked ~ .pre > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(4):checked ~ .next > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(4):checked ~ .next > label:nth-child(5) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(4):checked ~ .pre > label:nth-child(3) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(5):checked ~ .pre > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(5):checked ~ .next > label {
+  opacity: 0;
+  z-index: 1; }
+
+input:nth-child(5):checked ~ .next > label:nth-child(1) {
+  opacity: 1;
+  z-index: 2; }
+
+input:nth-child(5):checked ~ .pre > label:nth-child(4) {
   opacity: 1;
   z-index: 2; }
